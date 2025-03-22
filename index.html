@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Recipe page</title>
+
+  
+  <style>
+    /****************************************************
+    *               CSS GENERAL RESET & CO              *
+    ****************************************************/
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /*VARIABLE SET */
+    :root {
+      --header-margin: 1rem; /*All other margin will be relative to this using the calc function*/
+      /*Colour definition*/
+      --main-bg: hsl(30, 54%, 90%);
+      --main-bg-light: hsl(330, 100%, 98%);
+      --container-color: hsl(0, 0%, 100%);
+      --text-color: hsl(30, 10%, 34%);
+      --heading-color: hsl(24, 5%, 18%);
+      --subhead-color: hsl(14, 45%, 36%);  
+      --inbox-subhead-color: hsl(332, 51%, 32%);
+      --independent-border-line-color: hsl(30, 18%, 87%);
+    }
+    /*HTML AND BODY SET*/
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      line-height: 1.4;
+      font-size: 1.5rem;
+      background-color: var(--main-bg);
+      color: var(--text-color);
+    }
+
+    .container {
+      background-color: var(--container-color);
+      padding-bottom: 2rem;
+    }
+
+    /****************************************************
+    *                    MAIN SECTION                   *
+    ****************************************************/
+
+    /*Margin set for all SECTION*/
+
+    .all-sect, h1 {
+      margin: 2.5rem 7.5%;
+    }
+
+    /*Header styling (Image and H1 tags)*/
+    header img {
+      width: 100%;
+    }
+
+    h1 {
+      margin-bottom: var(--header-margin);
+      margin-top: calc(var(--header-margin) + 0.8rem);
+      line-height: 0.95;
+      color: var(--heading-color);
+    }
+
+    h2 {
+      margin-bottom: calc(var(--header-margin) - 0.3rem);
+      color: var(--subhead-color);
+    }
+
+    .introduction {
+      margin-top: 0;
+    }
+
+
+    /*PREPARATION SECTION STYLE */
+    .preparation-detail {
+      background-color: var(--main-bg-light);
+      border-radius: 1rem;
+      padding: 1.4rem 2rem;
+    }
+
+    .preparation-detail h3 {
+      margin-bottom: calc(var(--header-margin) - .5rem);
+      color: var(--inbox-subhead-color);
+    }
+
+    .preparation-detail ul li { 
+      margin-left: 0.3rem;
+    }
+
+
+    /*LIST STYLING: ALL*/
+    ol, ul {
+      margin-left: 2rem;
+    }
+
+    li {
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /*Targeting all list bullets*/
+    li::marker {
+      font-size: 1.4rem;
+      color: var(--subhead-color);
+      font-weight: 600;
+    }
+
+    /*INGREDIENTS & INSTRUCTION SECTION STYLE
+    NOTE: Same styling apply for both;
+    */
+    .ingredients, .instruction {
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--independent-border-line-color);
+
+    }
+
+    /*NUTRITION SECTION*/
+
+    .nutrition table {
+      width: 100%;
+      border-collapse: collapse; /* Ensures there are no double borders */
+    }
+
+    .nutrition th, 
+    .nutrition td {
+      border-bottom: 1px solid var(--independent-border-line-color);
+      padding: 10px 25px; 
+      text-align: left;
+    }
+
+    .nutrition th {
+      font-weight: bold;
+      color: var(--subhead-color);
+    }
+
+    .nutrition caption {
+      text-align: left;
+      margin-bottom: var(--header-margin);
+    }
+    
+    /****************
+     * FOOTER SECTION *
+     ****************/
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: var(--heading-color) }
+    
+
+    /****************************************************
+    *                BREAKPOINT SETTINGS                *
+    ****************************************************/
+    
+    @media (min-width: 992px) {
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh;
+        padding: 4rem;
+
+      }
+      .container {
+        max-width: 60%;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow: 0px 0px 3rem var(--main-bg-light);
+      }
+      .all-sect {
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+      }
+
+      header {
+        padding: 2.5rem 2.5rem 1rem;
+      }
+
+      header img {
+        border-radius: 1rem;
+      }
+
+      header h1 {
+        margin-left: 0rem;
+      }
+
+      footer {
+        margin: 1.5rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="assets/images/image-omelette.jpeg" alt="recipe Img">
+      <h1>Simple Omelette Recipe</h1>
+    </header>
+
+    <main>
+      <section class="introduction all-sect">
+        <p>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>    
+      </section>
+
+      <section class="preparation-detail all-sect">
+        <h3>Preparation time</h3>
+        <ul>
+          <li><strong>Total:</strong> Approximately 10 minutes</li>
+          <li><strong>Preparation:</strong> 5 minutes</li>
+          <li><strong>Cooking:</strong> 5 minutes</li>
+        </ul>
+      </section>
+
+      <section class="ingredients all-sect">
+        <h2>Ingredients</h2>
+        <ul>
+          <li>2-3 large eggs</li>
+          <li>Salt, to taste</li>
+          <li>Pepper, to taste</li>
+          <li>1 tablespoon of butter or oil</li>
+          <li> Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
+        </ul>
+      </section>
+
+      <section class="instruction all-sect">
+        <h2>Instructions</h2>
+        <ol>
+          <li><strong>Beat the eggs:</strong> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.</li>
+          <li><strong>Heat the pan:</strong> Place a non-stick frying pan over medium heat and add butter or oil.</li>
+          <li><strong>Cook the omelette:</strong> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.</li>
+          <li><strong>Add fillings (optional):</strong> When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.</li>
+          <li><strong>Fold and serve:</strong> As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.</li>
+          <li><strong>Enjoy:</strong> Serve hot, with additional salt and pepper if needed.</li>
+        </ol>
+      </section>
+
+      <section class="nutrition all-sect">
+        <h2>Nutrition</h2>
+        <table>
+          <caption>The table below shows nutritional values per serving without the additional fillings.</caption>
+          <tr>
+            <td>Calories</td>
+            <th>277Kcal</th>
+          </tr>
+          <tr>
+            <td>Carbs</td>
+            <th>0g</th>
+          </tr>
+          <tr>
+            <td>Protein</td>
+            <th>20g</th>
+          </tr>
+          <tr>
+            <td>Fat</td>
+            <th>22g</th>
+          </tr>
+        </table>
+      </section>
+    </main>
+  </div>
+    
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/AJsem" target="_blank">JxGrim</a>.
+  </footer>
+</body>
+</html>
